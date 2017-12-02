@@ -13,6 +13,11 @@
 void locateend(char *cmd);
 int executecmd(char *cmd);
 
+struct SECBOOTPART secboot;
+struct INODE inode[TOTAL_NODOS_I];
+struct OPENFILES openfiles[TOTAL_NODOS_I];
+
+
 int main()
 {
 	char linea[MAXLEN];
@@ -139,10 +144,12 @@ int copyuv(char *arg1,char *arg2)
 	
 	sfile=open(arg1,0);
 	dfile=vdcreat(arg2,0640);
+
 	do {
 		ncars=read(sfile,buffer,BUFFERSIZE);
 		vdwrite(dfile,buffer,ncars);
 	} while(ncars==BUFFERSIZE);
+
 	close(sfile);
 	vdclose(dfile);
 	return(1);	
@@ -160,10 +167,12 @@ int copyvu(char *arg1,char *arg2)
 	
 	sfile=vdopen(arg1,0);
 	dfile=creat(arg2,0640);
+
 	do {
 		ncars=vdread(sfile,buffer,BUFFERSIZE);
 		write(dfile,buffer,ncars);
 	} while(ncars==BUFFERSIZE);
+	
 	vdclose(sfile);
 	close(dfile);
 	return(1);	
