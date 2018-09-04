@@ -4,7 +4,7 @@ struct OPENFILES {
 	unsigned short inode;
 	int currpos;
 	int currbloqueenmemoria;
-	char buffer[512];
+	char buffer[2048];
 	unsigned short buffindirect[512]; //		
 };
 
