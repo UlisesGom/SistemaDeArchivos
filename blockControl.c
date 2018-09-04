@@ -1,10 +1,10 @@
-
+﻿
 struct OPENFILES {
 	int inuse;		// 0 cerrado, 1 abierto
 	unsigned short inode;
 	int currpos;
 	int currbloqueenmemoria;
-	char buffer[1024];
+	char buffer[512];
 	unsigned short buffindirect[512]; //		
 };
 
