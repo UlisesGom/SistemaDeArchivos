@@ -10,7 +10,7 @@ int vdopen(char *filename,unsigned short mode)
 int vdcreat(char *filename,unsigned short perms)
 {
 	int numinode;
-	int i;
+	int f;
 
 	// Ver si ya existe el archivo
 	numinode=searchinode(filename);
