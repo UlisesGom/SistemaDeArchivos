@@ -1,7 +1,7 @@
-
+﻿
 int vdopen(char *filename,unsigned short mode)
 {
-	// Les toca hacerla a ustedes
+	// NO
 }
 
 
